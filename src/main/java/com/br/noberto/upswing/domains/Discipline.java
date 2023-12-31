@@ -5,19 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tb_admins")
+@Table(name = "tb_disciplines")
 @AllArgsConstructor @NoArgsConstructor @Data
-public class Admin {
+public class Discipline {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_office")
+    @Column(name = "id_discipline")
     private UUID id;
-    private String office;
-    @Embedded
-    private User user;
+    private String discipline;
+    private String description;
+
+    @ManyToOne
+    private Course course;
 }

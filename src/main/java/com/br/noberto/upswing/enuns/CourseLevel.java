@@ -1,18 +1,18 @@
 package com.br.noberto.upswing.enuns;
 
-public enum Course {
+public enum CourseLevel {
     FREE("Livre"),
     TECHNICIAN("Técnico"),
     HIGHER("Superior");
 
     private final String courseLevel;
 
-    Course(String courseLevel){
+    CourseLevel(String courseLevel){
         this.courseLevel = courseLevel;
     }
 
-    public static Course fromCourse(String level){
-        for (Course courses : Course.values()){
+    public static CourseLevel fromCourse(String level){
+        for (CourseLevel courses : CourseLevel.values()){
             if (courses.courseLevel.equalsIgnoreCase(level)){
                 return courses;
             }
